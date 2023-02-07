@@ -3,10 +3,9 @@ import { SITE } from "@config";
 import Posts from "@layouts/Posts.astro";
 import getSortedPosts from "@utils/getSortedPosts";
 import getPageNumbers from "@utils/getPageNumbers";
+import type { Frontmatter } from "@types";
 
-import { getCollection } from "astro:content";
-
-const posts = await getCollection("blog");
+const posts = await Astro.glob<Frontmatter>("../../contents/**/*.md");
 
 const sortedPosts = getSortedPosts(posts);
 

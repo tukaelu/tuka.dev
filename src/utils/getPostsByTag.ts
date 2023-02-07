@@ -1,7 +1,8 @@
 import { slufigyAll } from "./slugify";
-import type { CollectionEntry } from "astro:content";
+import type { MarkdownInstance } from "astro";
+import type { Frontmatter } from "@types";
 
-const getPostsByTag = (posts: CollectionEntry<"blog">[], tag: string) =>
-  posts.filter(post => slufigyAll(post.data.tags).includes(tag));
+const getPostsByTag = (posts: MarkdownInstance<Frontmatter>[], tag: string) =>
+  posts.filter(post => slufigyAll(post.frontmatter.tags).includes(tag));
 
 export default getPostsByTag;

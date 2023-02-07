@@ -1,3 +1,16 @@
+export type Frontmatter = {
+  title: string;
+  slug: string;
+  description: string;
+  ogImage?: string;
+  tags: string[];
+  publishedAt: string;
+  updatedAt: string;
+  author: string;
+  featured: boolean;
+  draft: boolean;
+};
+
 export type SocialObjects = {
   name: SocialMedia;
   href: string;
@@ -29,4 +42,5 @@ export type SocialMedia =
   | "Skype"
   | "Steam"
   | "Telegram"
-  | "Mastodon";
+  | "Mastodon"
+  | "RssFeed";

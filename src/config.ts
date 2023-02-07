@@ -38,4 +38,10 @@ export const SOCIALS: SocialObjects = [
     linkTitle: `${SITE.nickname} on Facebook`,
     active: true,
   },
+  {
+    name: "RssFeed",
+    href: "/rss.xml",
+    linkTitle: `RSS Feed`,
+    active: true,
+  },
 ];

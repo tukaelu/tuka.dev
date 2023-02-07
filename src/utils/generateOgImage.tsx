@@ -4,13 +4,13 @@ import { SITE } from "@config";
 const fetchFonts = async () => {
   // Regular Font
   const fontFileRegular = await fetch(
-    "https://www.1001fonts.com/download/font/ibm-plex-mono.regular.ttf"
+    "https://raw.githubusercontent.com/googlefonts/zen-marugothic/main/fonts/ttf/ZenMaruGothic-Regular.ttf"
   );
   const fontRegular: ArrayBuffer = await fontFileRegular.arrayBuffer();
 
   // Bold Font
   const fontFileBold = await fetch(
-    "https://www.1001fonts.com/download/font/ibm-plex-mono.bold.ttf"
+    "https://raw.githubusercontent.com/googlefonts/zen-marugothic/main/fonts/ttf/ZenMaruGothic-Bold.ttf"
   );
   const fontBold: ArrayBuffer = await fontFileBold.arrayBuffer();
 
@@ -29,6 +29,8 @@ const ogImage = (text: string) => {
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
+        letterSpacing: "-.02em",
+        textShadow: "0px 4px 4px rgba(0, 0, 0, 0.25)",
       }}
     >
       <div
@@ -72,10 +74,12 @@ const ogImage = (text: string) => {
         >
           <p
             style={{
-              fontSize: 72,
+              fontSize: 55,
               fontWeight: "bold",
+              maxWidth: 800,
               maxHeight: "84%",
               overflow: "hidden",
+              wordBreak: "break-word",
             }}
           >
             {text}
@@ -99,13 +103,30 @@ const ogImage = (text: string) => {
                 "
               </span>
               <span style={{ overflow: "hidden", fontWeight: "bold" }}>
-                {SITE.author}
+                {SITE.nickname}
               </span>
             </span>
 
             <span style={{ overflow: "hidden", fontWeight: "bold" }}>
               {SITE.title}
             </span>
+
+            <div
+              style={{
+                left: 100,
+                bottom: -20,
+                position: "absolute",
+                display: "flex",
+                alignItems: "center",
+              }}
+            >
+              <img
+                src={`https://tuka.dev/tuka.svg`}
+                width={72}
+                height={72}
+                alt="logo"
+              />
+            </div>
           </div>
         </div>
       </div>
@@ -119,13 +140,13 @@ const options: SatoriOptions = {
   embedFont: true,
   fonts: [
     {
-      name: "IBM Plex Mono",
+      name: "Zen Maru Gothic",
       data: fontRegular,
       weight: 400,
       style: "normal",
     },
     {
-      name: "IBM Plex Mono",
+      name: "Zen Maru Gothic",
       data: fontBold,
       weight: 600,
       style: "normal",

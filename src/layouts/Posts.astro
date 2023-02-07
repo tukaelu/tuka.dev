@@ -7,12 +7,13 @@ import Footer from "@components/Footer.astro";
 import Card from "@components/Card";
 import LinkButton from "@components/LinkButton.astro";
 import slugify from "@utils/slugify";
-import type { CollectionEntry } from "astro:content";
+import type { MarkdownInstance } from "astro";
+import type { Frontmatter } from "@types";
 
 export interface Props {
   pageNum: number;
   totalPages: number;
-  posts: CollectionEntry<"blog">[];
+  posts: MarkdownInstance<Frontmatter>[];
 }
 
 const { pageNum, totalPages, posts } = Astro.props;
@@ -26,8 +27,11 @@ const next = pageNum < totalPages ? "" : "disabled";
   <Main pageTitle="Posts" pageDesc="All the articles I've posted.">
     <ul>
       {
-        posts.map(({ data }) => (
-          <Card href={`/posts/${slugify(data)}`} frontmatter={data} />
+        posts.map(({ frontmatter }) => (
+          <Card
+            href={`/posts/${slugify(frontmatter)}`}
+            frontmatter={frontmatter}
+          />
         ))
       }
     </ul>

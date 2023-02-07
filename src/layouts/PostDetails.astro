@@ -4,17 +4,16 @@ import Header from "@components/Header.astro";
 import Footer from "@components/Footer.astro";
 import Tag from "@components/Tag.astro";
 import Datetime from "@components/Datetime";
-import type { CollectionEntry } from "astro:content";
+import type { MarkdownInstance } from "astro";
+import type { Frontmatter } from "@types";
 
 export interface Props {
-  post: CollectionEntry<"blog">;
+  post: MarkdownInstance<Frontmatter>;
 }
 
-const { post } = Astro.props;
+const { frontmatter, Content } = Astro.props.post;
 
-const { title, author, description, ogImage, pubDatetime, tags } = post.data;
-
-const { Content } = await post.render();
+const { title, author, description, ogImage, publishedAt, tags } = frontmatter;
 
 const ogUrl = new URL(ogImage ? ogImage : `${title}.svg`, Astro.url.origin)
   .href;
@@ -36,7 +35,7 @@ const ogUrl = new URL(ogImage ? ogImage : `${title}.svg`, Astro.url.origin)
   </div>
   <main id="main-content">
     <h1 class="post-title">{title}</h1>
-    <Datetime datetime={pubDatetime} size="lg" className="my-2" />
+    <Datetime datetime={publishedAt} size="lg" className="my-2" />
     <article id="article" role="article" class="prose mx-auto mt-8 max-w-3xl">
       <Content />
     </article>
@@ -44,6 +43,74 @@ const ogUrl = new URL(ogImage ? ogImage : `${title}.svg`, Astro.url.origin)
     <ul class="tags-container">
       {tags.map(tag => <Tag name={tag} />)}
     </ul>
+
+    <div class="social-share">
+      <!-- Hatena bookmark -->
+      <div class="social-share-hatena">
+        <a
+          href="https://b.hatena.ne.jp/entry/"
+          class="hatena-bookmark-button"
+          data-hatena-bookmark-layout="vertical-normal"
+          data-hatena-bookmark-lang="ja"
+          title="このエントリーをはてなブックマークに追加"
+        >
+          <img
+            width="20"
+            height="20"
+            src="https://b.st-hatena.com/images/v4/public/entry-button/button-only@2x.png"
+            alt="このエントリーをはてなブックマークに追加"
+            style="border: none;"
+          />
+        </a>
+        <script
+          type="text/javascript"
+          src="https://b.st-hatena.com/js/bookmark_button.js"
+          charset="utf-8"
+          async="async"
+        ></script>
+      </div>
+
+      <!-- Facebook share -->
+      <div class="social-share-facebook">
+        <div id="fb-root"></div>
+        <script>
+          (function (d, s, id) {
+            var js,
+              fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) return;
+            js = d.createElement(s);
+            js.id = id;
+            js.src =
+              "https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.0";
+            fjs.parentNode.insertBefore(js, fjs);
+          })(document, "script", "facebook-jssdk");
+        </script>
+        <div
+          class="fb-share-button"
+          data-href={Astro.url}
+          data-layout="box_count"
+          data-size="small"
+        >
+        </div>
+      </div>
+
+      <!-- Twitter share -->
+      <div class="social-share-twitter">
+        <a
+          href="https://twitter.com/share?ref_src=twsrc%5Etfw"
+          class="twitter-share-button"
+          data-related=""
+          data-lang="ja"
+          data-dnt="true"
+          data-show-count="false">Tweet</a
+        >
+        <script
+          async
+          src="https://platform.twitter.com/widgets.js"
+          charset="utf-8"
+        ></script>
+      </div>
+    </div>
   </main>
   <Footer />
 </Layout>
@@ -57,5 +124,8 @@ const ogUrl = new URL(ogImage ? ogImage : `${title}.svg`, Astro.url.origin)
   }
   .tags-container {
     @apply my-8;
+  }
+  .social-share {
+    @apply flex gap-2;
   }
 </style>
