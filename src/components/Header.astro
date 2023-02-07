@@ -62,6 +62,22 @@ const { activeNav } = Astro.props;
           </li>
           <li>
             <LinkButton
+              href="/rss.xml"
+              className="rss-btn"
+              ariaLabel="rss"
+              title="RSS Feed"
+            >
+              <svg xmlns="http://www.w3.org/2000/svg"
+                ><path
+                  d="M19 20.001C19 11.729 12.271 5 4 5v2c7.168 0 13 5.832 13 13.001h2z"
+                ></path><path
+                  d="M12 20.001h2C14 14.486 9.514 10 4 10v2c4.411 0 8 3.589 8 8.001z"
+                ></path><circle cx="6" cy="18" r="2"></circle>
+              </svg>
+            </LinkButton>
+          </li>
+          <li>
+            <LinkButton
               href="/search"
               className={`focus-outline p-3 sm:p-1 ${
                 activeNav === "search" ? "active" : ""
@@ -116,7 +132,7 @@ const { activeNav } = Astro.props;
     @apply relative flex w-full items-start justify-between p-4 sm:items-center sm:py-8;
   }
   .logo {
-    @apply absolute py-1 text-xl font-semibold sm:static sm:text-2xl;
+    @apply absolute py-1 text-xl font-semibold sm:text-2xl;
   }
   .hamburger-menu {
     @apply self-end p-2 sm:hidden;
@@ -162,6 +178,10 @@ const { activeNav } = Astro.props;
   }
   #theme-btn svg {
     @apply scale-125 hover:rotate-12 sm:scale-100;
+  }
+
+  .rss-btn {
+    @apply p-2 hover:rotate-6 sm:p-1;
   }
 
   .icon-container {

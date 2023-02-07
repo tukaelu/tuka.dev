@@ -1,0 +1,53 @@
+---
+import Socials from "@components/Socials.astro";
+import { SITE, SOCIALS } from "@config";
+
+const socialCount = SOCIALS.filter(social => social.active).length;
+---
+
+<section id="hero">
+  <div id="author-profile">
+    <div class="name">{ SITE.author }</div>
+    <div class="role">{ SITE.jobRole }</div>
+  </div>
+  {
+    // only display if at least one social link is enabled
+    socialCount > 0 && (
+      <div class="social-wrapper">
+        <div class="social-links">Social Links:</div>
+        <Socials />
+      </div>
+    )
+  }
+</section>
+
+<style>
+  /* ===== Hero Section ===== */
+  #hero {
+    @apply pt-8 pb-6;
+  }
+  #hero h1 {
+    @apply my-4 inline-block text-3xl font-bold sm:my-8 sm:text-5xl;
+  }
+  #hero .rss-link {
+    @apply mb-6;
+  }
+  #hero .rss-icon {
+    @apply mb-2 h-6 w-6 scale-110 fill-skin-accent sm:mb-3 sm:scale-125;
+  }
+  #hero p {
+    @apply my-2;
+  }
+  .social-wrapper {
+    @apply mt-4 flex flex-col sm:flex-row sm:items-center;
+  }
+  .social-links {
+    @apply mr-2 mb-1 whitespace-nowrap sm:mb-0;
+  }
+  #author-profile .name {
+    @apply text-2xl font-semibold tracking-wide sm:text-4xl;
+  }
+  #author-profile .role {
+    @apply mt-2;
+  }
+</style>
