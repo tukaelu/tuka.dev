@@ -1,0 +1,28 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": [
+    "config:base",
+    ":timezone(Asia/Tokyo)",
+    ":prHourlyLimitNone",
+    ":automergePatch"
+  ],
+  "schedule": [
+    "after 6am on monday and wednesday and friday",
+    "before 9am on monday and wednesday and friday"
+  ],
+  "labels": ["renovate"],
+  "rangeStrategy": "bump",
+  "separateMajorMinor": true,
+  "vulnerabilityAlerts": {
+    "labels": ["security"]
+  },
+  "packageRules": [
+    {
+      "matchPackagePatterns": ["^@types/"],
+      "automerge": true,
+      "major": {
+        "automerge": false
+      }
+    }
+  ]
+}
