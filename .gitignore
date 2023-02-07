@@ -21,3 +21,6 @@ pnpm-debug.log*
 
 # ignore .astro directory
 .astro
+
+# Optional eslint cache
+.eslintcache
