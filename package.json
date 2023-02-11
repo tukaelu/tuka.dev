@@ -16,7 +16,8 @@
     "cz": "cz",
     "prepare": "husky install",
     "fix": "eslint --cache --fix src/ && prettier --write src/",
-    "lint": "eslint --cache src/"
+    "lint": "eslint --cache src/",
+    "post": "scaffdog generate"
   },
   "dependencies": {
     "@astrojs/rss": "^2.1.0",
@@ -47,7 +48,8 @@
     "prettier": "^2.8.3",
     "prettier-plugin-tailwindcss": "^0.2.2",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "scaffdog": "^2.4.0"
   },
   "config": {
     "commitizen": {
