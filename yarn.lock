@@ -4712,10 +4712,10 @@ sass-formatter@^0.7.5:
   dependencies:
     suf-log "^2.5.3"
 
-satori@^0.1.2:
-  version "0.1.2"
-  resolved "https://registry.yarnpkg.com/satori/-/satori-0.1.2.tgz#0842199115a94b6ecf7a979cd99c96a2c9518346"
-  integrity sha512-1P08+PyNUzJ2P0bdI9reSJw+B/Whv9nThvoX4HAiAp9lNNTHtwtN9525TuEtELml7AEEvECpeOvBqMkAxcuQeQ==
+satori@^0.2.3:
+  version "0.2.3"
+  resolved "https://registry.yarnpkg.com/satori/-/satori-0.2.3.tgz#5bfa4651047f5bfee06322fc02fcebd993957e8b"
+  integrity sha512-jl/+sFkz3pBfGip7034Uvn/Hp1FZq4prKXIZO28rV90DS3jTU6uXBV0FRX4ooYoO27f3rGNXKhSKyDST5FdmQA==
   dependencies:
     "@shuding/opentype.js" "1.4.0-beta.0"
     css-background-parser "^0.1.0"
