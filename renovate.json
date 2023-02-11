@@ -9,7 +9,7 @@
   "schedule": [
     "after 6am on monday and wednesday and friday",
     "before 9am on monday and wednesday and friday",
-    "before 2pm on every weekend"
+    "every weekend"
   ],
   "labels": ["renovate"],
   "rangeStrategy": "bump",
