@@ -121,7 +121,7 @@ const ogImage = (text: string) => {
               }}
             >
               <img
-                src={`https://tuka.dev/tuka.svg`}
+                src={`https://tuka.dev/assets/tuka.svg`}
                 width={72}
                 height={72}
                 alt="logo"
