@@ -21,6 +21,7 @@
     "post": "scaffdog generate"
   },
   "dependencies": {
+    "@astrojs/partytown": "^1.0.3",
     "@astrojs/rss": "^2.1.0",
     "astro": "^2.0.10",
     "fuse.js": "^6.6.2",
