@@ -1,0 +1,16 @@
+rules:
+  preset-japanese:
+    sentence-length:
+      max: 120
+    max-ten:
+      max: 4
+    no-doubled-joshi: false
+  ja-no-mixed-period:
+    allowEmojiAtEnd: true
+    forceAppendPeriod: true
+    allowPeriodMarks: 
+      - ":"
+      - "…"
+  ja-no-redundant-expression: true
+  no-mixed-zenkaku-and-hankaku-alphabet: true
+  preset-ja-spacing: true

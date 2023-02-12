@@ -17,6 +17,7 @@
     "prepare": "husky install",
     "fix": "eslint --cache --fix src/ && prettier --write src/",
     "lint": "eslint --cache src/",
+    "textlint": "textlint --cache -f pretty-error src/contents/*.md",
     "post": "scaffdog generate"
   },
   "dependencies": {
@@ -49,7 +50,13 @@
     "prettier-plugin-tailwindcss": "^0.2.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "scaffdog": "^2.4.0"
+    "scaffdog": "^2.4.0",
+    "textlint": "^13.2.0",
+    "textlint-rule-ja-no-mixed-period": "^3.0.1",
+    "textlint-rule-ja-no-redundant-expression": "^4.0.1",
+    "textlint-rule-no-mixed-zenkaku-and-hankaku-alphabet": "^1.0.1",
+    "textlint-rule-preset-ja-spacing": "^2.3.0",
+    "textlint-rule-preset-japanese": "^7.0.0"
   },
   "config": {
     "commitizen": {

@@ -24,3 +24,6 @@ pnpm-debug.log*
 
 # Optional eslint cache
 .eslintcache
+
+# Optional textlint cache
+.textlintcache
