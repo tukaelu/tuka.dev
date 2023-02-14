@@ -1,0 +1,55 @@
+name: review
+
+on:
+  workflow_dispatch:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+env:
+  NODE_VERSION: 17
+
+jobs:
+  review:
+    name: reviewdog
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout
+        uses: actions/checkout@v3
+
+      - name: setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+
+      - name: install yarn
+        run: npm install -g yarn
+
+      - name: cache node modules
+        id: node_modules_cache_id
+        uses: actions/cache@v3
+        with:
+          path: |
+            node_modules
+          key: node-v${{ env.NODE_VERSION }}-${{ hashFiles('/yarn.lock') }}
+
+      - name: install node modules
+        run: yarn install
+        if: steps.node_modules_cache_id.outputs.cache-hit != 'true'
+
+      - name: run check
+        uses: tsuyoshicho/action-textlint@v3
+        with:
+          textlint_flags: "src/contents/*.md"
+          reporter: github-check
+          level: warning
+          github_token: ${{ secrets.REVIEWDOG_GITHUB_API_TOKEN }}
+
+      - name: run review
+        uses: tsuyoshicho/action-textlint@v3
+        with:
+          textlint_flags: "src/contents/*.md"
+          reporter: github-pr-review
+          github_token: ${{ secrets.REVIEWDOG_GITHUB_API_TOKEN }}
