@@ -43,4 +43,5 @@ export type SocialMedia =
   | "Steam"
   | "Telegram"
   | "Mastodon"
-  | "RssFeed";
+  | "RssFeed"
+  | "Keybase";

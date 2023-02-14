@@ -39,6 +39,12 @@ export const SOCIALS: SocialObjects = [
     active: true,
   },
   {
+    name: "Keybase",
+    href: "https://keybase.io/tukaelu",
+    linkTitle: `${SITE.nickname} on Keybase`,
+    active: true,
+  },
+  {
     name: "RssFeed",
     href: "/rss.xml",
     linkTitle: `RSS Feed`,
