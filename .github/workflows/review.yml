@@ -33,7 +33,7 @@ jobs:
         with:
           path: |
             node_modules
-          key: node-v${{ env.NODE_VERSION }}-${{ hashFiles('/yarn.lock')) }}
+          key: node-v${{ env.NODE_VERSION }}-${{ hashFiles('/yarn.lock') }}
 
       - name: install node modules
         run: yarn install
