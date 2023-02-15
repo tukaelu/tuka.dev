@@ -1,4 +1,5 @@
 import { defineConfig } from "tinacms";
+import { cdate } from "cdate";
 
 // Your hosting provider likely exposes this as an environment variable
 const branch = process.env.HEAD || process.env.VERCEL_GIT_COMMIT_REF || "main";
@@ -23,6 +24,18 @@ export default defineConfig({
         name: "post",
         label: "Posts",
         path: "src/contents",
+        ui: {
+          defaultItem: {
+            author: "tuka",
+            featured: false,
+            draft: true,
+          },
+          filename: {
+            slugify: values => {
+              return `${cdate(values.publishedAt).format("YYYY-MM-DD")}_${values.slug}`
+            },
+          }
+        },
         fields: [
           {
             type: "string",
