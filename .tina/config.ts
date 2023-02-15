@@ -13,7 +13,7 @@ export default defineConfig({
   },
   media: {
     tina: {
-      mediaRoot: "public/uploads/images",
+      mediaRoot: "uploads/images",
       publicFolder: "public",
     },
   },
@@ -32,10 +32,58 @@ export default defineConfig({
             required: true,
           },
           {
+            type: "string",
+            name: "slug",
+            label: "Slug",
+            required: true,
+          },
+          {
+            type: "string",
+            name: "description",
+            label: "Description",
+            required: true,
+          },
+          {
             type: "rich-text",
             name: "body",
             label: "Body",
             isBody: true,
+          },
+          {
+            type: "string",
+            name: "tags",
+            label: "Tags",
+            required: true,
+          },
+          {
+            type: "datetime",
+            name: "publishedAt",
+            label: "PublishedAt",
+            required: true,
+          },
+          {
+            type: "datetime",
+            name: "updatedAt",
+            label: "UpdatedAt",
+            required: true,
+          },
+          {
+            type: "string",
+            name: "author",
+            label: "Author",
+            required: true,
+          },
+          {
+            type: "boolean",
+            name: "featured",
+            label: "Featured",
+            required: true,
+          },
+          {
+            type: "boolean",
+            name: "draft",
+            label: "Draft",
+            required: true,
           },
         ],
       },
