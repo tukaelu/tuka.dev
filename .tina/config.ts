@@ -24,6 +24,7 @@ export default defineConfig({
         name: "post",
         label: "Posts",
         path: "src/contents",
+        format: "md",
         ui: {
           defaultItem: {
             author: "tuka",
