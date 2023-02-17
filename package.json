@@ -23,7 +23,7 @@
   },
   "dependencies": {
     "@astrojs/partytown": "^1.0.3",
-    "@astrojs/rss": "^2.1.0",
+    "@astrojs/rss": "^2.1.1",
     "@tinacms/cli": "^1.2.1",
     "astro": "^2.0.13",
     "fuse.js": "^6.6.2",
