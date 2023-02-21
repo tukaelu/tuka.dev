@@ -1,0 +1,45 @@
+.linkcard__container {
+  @apply h-32 border border-solid rounded-lg overflow-hidden pr-2;
+}
+
+.linkcard {
+  @apply flex flex-row max-w-full items-center;
+}
+
+.linkcard__main {
+  @apply flex flex-row items-center;
+  -webkit-box-align: center;
+}
+
+.linkcard__thumbnail {
+  @apply h-32;
+  max-width: 26%;
+}
+
+.linkcard__image {
+  @apply object-cover w-full h-full;
+}
+
+.linkcard__content {
+  @apply flex flex-1 flex-col my-0 leading-normal;
+  margin-inline: 0.5rem 0px;
+  color: rgba(var(--color-text-base));
+  border-color: rgba(var(--color-border));
+}
+
+.linkcard__title {
+  @apply font-bold;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+}
+
+.linkcard__description {
+  @apply text-sm font-normal mt-2;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}

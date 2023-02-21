@@ -4,6 +4,7 @@ import react from "@astrojs/react";
 import remarkToc from "remark-toc";
 import remarkCollapse from "remark-collapse";
 import remarkGemoji from "remark-gemoji";
+import remarkLinkCard from "./src/libs/remarkLinkCard";
 import sitemap from "@astrojs/sitemap";
 import partytown from "@astrojs/partytown";
 
@@ -34,6 +35,7 @@ export default defineConfig({
         },
       ],
       remarkGemoji,
+      remarkLinkCard,
     ],
     shikiConfig: {
       theme: "one-dark-pro",
