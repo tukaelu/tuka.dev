@@ -10825,10 +10825,10 @@ sass-formatter@^0.7.5:
   dependencies:
     suf-log "^2.5.3"
 
-satori@^0.3.2:
-  version "0.3.2"
-  resolved "https://registry.yarnpkg.com/satori/-/satori-0.3.2.tgz#227ff2ccd7ea569e2bac58534f6437fe0dcb48e1"
-  integrity sha512-/CLmLk5rzHudMWrMt50UwjG81WOkKnMyVeDzx49jOQzYxwfmImPvf+oWTU703Gq2lE5GkLZ3e7xtTubIQ3IzQQ==
+satori@^0.4.0:
+  version "0.4.0"
+  resolved "https://registry.yarnpkg.com/satori/-/satori-0.4.0.tgz#713fd516214c2c2db539495a95a1c71c9438186a"
+  integrity sha512-ROtZJkBErgJ2HVMk5jDUrJ8B+FuOTFlHYjcNCfSHjwgEavkaZsDvxPwl/1VCa4XpdkHrPcMuUDF+36w+lUECUg==
   dependencies:
     "@shuding/opentype.js" "1.4.0-beta.0"
     css-background-parser "^0.1.0"
