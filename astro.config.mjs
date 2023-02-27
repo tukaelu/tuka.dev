@@ -43,4 +43,13 @@ export default defineConfig({
     },
     extendDefaultPlugins: true,
   },
+  // TODO Issue: "'No loader is configured for ".node" files: node_modules/@resvg/resvg-js-linux-x64-xxx/resvgjs.linux-x64-xxx.node'"
+  // see.
+  //   - https://github.com/satnaing/astro-paper/issues/40
+  //   - https://github.com/evanw/esbuild/issues/1051#issuecomment-1006992549
+  vite: {
+    optimizeDeps: {
+      exclude: ["@resvg/resvg-js"],
+    },
+  },
 });
