@@ -8,7 +8,12 @@ const posts = Object.values(
   import.meta.glob<MarkdownInstance<Frontmatter>>("../contents/**/*.md", {
     eager: true,
   })
-).filter(({ frontmatter }) => !frontmatter.draft);
+)
+  .filter(({ frontmatter }) => !frontmatter.draft)
+  .sort(
+    (a, b) =>
+      new Date(b.frontmatter.publishedAt) - new Date(a.frontmatter.publishedAt)
+  );
 
 export async function get() {
   return rss({
