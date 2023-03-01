@@ -7,7 +7,7 @@ export const SITE = {
   jobRole: "Customer Reliability Engineer",
   desc: "ゆるく、ざつに、なにかかく - I'll write something loose and simple.",
   title: "つかのブログ",
-  ogImage: "astropaper-og.jpg",
+  ogImage: "site-og.png",
   lightAndDarkMode: true,
   postPerPage: 3,
 };
