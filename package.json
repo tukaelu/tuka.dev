@@ -48,7 +48,7 @@
     "@types/react": "^18.0.28",
     "@types/unist": "^2.0.6",
     "@typescript-eslint/parser": "^5.54.1",
-    "astro-eslint-parser": "^0.11.0",
+    "astro-eslint-parser": "^0.12.0",
     "cdate": "^0.0.4",
     "commitizen": "^4.3.0",
     "cz-conventional-changelog": "^3.3.0",
